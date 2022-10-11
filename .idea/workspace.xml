@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ac744469-86d9-4d59-a766-4de8fdf69cec" name="Default Changelist" comment="" />
+    <list default="true" id="ac744469-86d9-4d59-a766-4de8fdf69cec" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.chassi/testbed/kustomization.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.chassi/deployment.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.chassi/testbed/deployment.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.chassi/ingress.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.chassi/testbed/ingress.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.chassi/service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.chassi/testbed/service.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,6 +33,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/.chassi/testbed" />
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
@@ -40,6 +47,17 @@
       <updated>1665426701674</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
