@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: "${application}"
+  name: "${parameters.application}"
 spec:
   revisionHistoryLimit: 2
   selector:
@@ -17,9 +17,9 @@ spec:
     spec:
       containers:
       - name: "${parameters.application}"
-        image: "chassidemo/${application}:${version}"
+        image: "chassidemo/${parameters.application}:${parameters.version}"
         ports:
-        - containerPort: "${port}"
+        - containerPort: "${parameters.port}"
         volumeMounts:
         - name: "shared-data"
           mountPath: /share
