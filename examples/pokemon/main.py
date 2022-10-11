@@ -1,7 +1,6 @@
 from bottle import route, run, template
 from pokemon.skills import get_ascii, get_avatar
 from pokemon.master import get_pokemon, catch_em_all
-import pprint
 
 @route("/avatar")
 @route("/avatar/<name>")
