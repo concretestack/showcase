@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ac744469-86d9-4d59-a766-4de8fdf69cec" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/examples/pokemon/data/names.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/pokemon/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/examples/pokemon/main.py" afterDir="false" />
-    </list>
+    <list default="true" id="ac744469-86d9-4d59-a766-4de8fdf69cec" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,6 +24,11 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

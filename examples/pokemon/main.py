@@ -1,6 +1,6 @@
 from bottle import route, run, template
-from pokemon.skills import get_ascii, get_avatar
 from pokemon.master import get_pokemon, catch_em_all
+import json
 
 @route("/avatar")
 @route("/avatar/<name>")
@@ -8,21 +8,28 @@ def avatar(name=None):
     """generates a named pokemon avatar or a randomized one"""
     catch = None
     if name:
-        catch = get_pokemon(pid=name)
+        catch = get_pokemon(name=name)
     else:
         catch = get_pokemon()
-    pid, ascii = catch.popitem()
-    _avatar = get_avatar(pid, print_screen=False)
-    return template('Avatar for {{pid}} is {{avatar}}', pid, _avatar)
+
+    pid, properties = catch.popitem()
+    avatar, name = properties['ascii'], properties['name']
+    return f'Avatar for {name} is <p>{avatar}</p>'
 
 @route("/pokemon")
 @route("/pokemon/<name>")
 def pokemon(name=None):
     """show information about a randomized pokemon or a named one"""
+    value = None
     if name:
-        return get_pokemon(name=name)
+        value = get_pokemon(name=name)
     else:
-        return get_pokemon()
+        value = get_pokemon()
+
+    pid, properties = value.popitem()
+    del properties['ascii']
+    properties = json.dumps(properties, indent=2)
+    return f'Pokemon with ID {pid} has the following properties <p>{properties}</p>'
 
 @route("/")
 @route("/pokemons")
