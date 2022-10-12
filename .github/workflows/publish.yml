@@ -1,5 +1,8 @@
 name: Demo Release
-on: [ pull_request ]
+on:
+  push:
+    tags:
+    - "v[0-9]+.[0-9]+.[0-9]+"
 
 env:
   CONTAINER_REGISTRY: chassidemo
@@ -18,7 +21,7 @@ jobs:
       - name: "emit chassi version"
         id: set-chassi-version
         run: |
-          echo ::set-output name=chassi-version::0.0
+          echo ::set-output name=chassi-version::${GITHUB_REF##*/v}
   publish-pokemons:
     needs: [envsetup]
     runs-on: jammy
@@ -43,5 +46,5 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            "${{ env.CONTAINER_REGISTRY }}/${{ needs.envsetup.outputs.chassi-version }}"
+            "${{ env.CONTAINER_REGISTRY }}/pokemon:${{ needs.envsetup.outputs.chassi-version }}"
             "${{ env.CONTAINER_REGISTRY }}/pokemon:latest"
