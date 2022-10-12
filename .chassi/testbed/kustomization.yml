@@ -4,6 +4,8 @@ kind: Kustomization
 commonLabels:
   app.kubernetes.io/name: "${parameters.application}"
 
+namespace: chassi-services
+
 resources:
 - deployment.yml
 - service.yml

@@ -14,4 +14,4 @@ spec:
           service:
             name: "${parameters.application}"
             port:
-              number: "${parameters.port}"
+              number: 10000
