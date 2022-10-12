@@ -18,7 +18,7 @@ jobs:
       - name: "emit chassi version"
         id: set-chassi-version
         run: |
-          echo ::set-output name=chassi-version::${GITHUB_REF##*/v}
+          echo ::set-output name=chassi-version::0.0
   publish-pokemons:
     needs: [envsetup]
     runs-on: jammy
@@ -43,5 +43,5 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            "${{ env.CONTAINER_REGISTRY }}/:${{ needs.envsetup.outputs.chassi-version }}"
+            "${{ env.CONTAINER_REGISTRY }}/${{ needs.envsetup.outputs.chassi-version }}"
             "${{ env.CONTAINER_REGISTRY }}/pokemon:latest"
