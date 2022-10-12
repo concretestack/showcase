@@ -1,0 +1,36 @@
+{
+    "_meta": {
+        "hash": {
+            "sha256": "5e1ab2780cf1059fa38190665572b0b31521d3031661938d9f9a0334ee6f1624"
+        },
+        "pipfile-spec": 6,
+        "requires": {
+            "python_version": "3"
+        },
+        "sources": [
+            {
+                "name": "pypi",
+                "url": "https://pypi.org/simple",
+                "verify_ssl": true
+            }
+        ]
+    },
+    "default": {
+        "bottle": {
+            "hashes": [
+                "sha256:683de3aa399fb26e87b274dbcf70b1a651385d459131716387abdc3792e04167",
+                "sha256:9f1c363257c590bd34db5fad4693a7f06ff4217e9ad18337451de69c25137127"
+            ],
+            "index": "pypi",
+            "version": "==0.12.23"
+        },
+        "pokemon": {
+            "hashes": [
+                "sha256:cdbf9bcadee36376ffe1329087d614d220dc9565b1a955e40b90c87c35071889"
+            ],
+            "index": "pypi",
+            "version": "==0.35"
+        }
+    },
+    "develop": {}
+}

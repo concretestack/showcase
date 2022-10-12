@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: "${parameters.application}"
+spec:
+  revisionHistoryLimit: 2
+  selector:
+    matchLabels:
+      platform.chassi.io/application: "${parameters.application}"
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: "${parameters.application}"
+        app.kubernetes.io/version: "${parameters.version}"
+        platform.chassi.io/application: "${parameters.application}"
+    spec:
+      containers:
+      - name: "${parameters.application}"
+        image: "chassidemo/${parameters.application}:${parameters.version}"
+        ports:
+        - containerPort: 10000
+        volumeMounts:
+        - name: "shared-data"
+          mountPath: /share
+      volumes:
+      - name: shared-data
+        emptyDir: {}
