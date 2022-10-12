@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: "${parameters.application}"
-        image: "chassidemo/${application}:${version}"
+        image: "chassidemo/${parameters.application}:${parameters.version}"
         ports:
         - containerPort: 10000
         volumeMounts:
