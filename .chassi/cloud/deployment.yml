@@ -6,14 +6,14 @@ spec:
   revisionHistoryLimit: 2
   selector:
     matchLabels:
-      io.chassi.application: "${parameters.application}"
+      platform.chassi.io/application: "${parameters.application}"
   replicas: 1
   template:
     metadata:
       labels:
         app.kubernetes.io/name: "${parameters.application}"
         app.kubernetes.io/version: "${parameters.version}"
-        io.chassi.application/application: "${parameters.application}"
+        platform.chassi.io/application: "${parameters.application}"
     spec:
       containers:
       - name: "${parameters.application}"

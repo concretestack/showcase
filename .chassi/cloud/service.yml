@@ -7,4 +7,4 @@ spec:
     - port: 10000
       protocol: TCP
   selector:
-    io.chassi.application: "${parameters.application}"
+    platform.chassi.io/application: "${parameters.application}"
