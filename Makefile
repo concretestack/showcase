@@ -1,10 +1,14 @@
 .DEFAULT_GOAL := all
 SHELL:=/bin/bash
+REPOSITORY=chassidemo
 
 pokemon: .guard-REPOSITORY
 	@echo "---> building pokemon raspberry pi application container"
-	docker build -t $(REPOSITORY)/pokemon:latest -f pokemon.Dockerfile .
-	docker push $(REPOSITORY)/pokemon:latest || true
+	docker build -t $(REPOSITORY)/pokemon:latest -f pokemon.Dockerfile examples/pokemon/
+
+publish: .guard-APPLICATION
+	@echo "---> publishing $(APPLICATION) raspberry pi application"
+	docker push $(REPOSITORY)/$(APPLICATION):latest
 
 .guard-%:
 	@ if [ "${${*}}" = "" ]; then \
