@@ -12,7 +12,7 @@ set -o nounset
 # Catch the error in case mysqldump fails (but gzip succeeds) in `mysqldump |gzip`
 set -o pipefail
 
-VERSION="${SHOWCASE_VERSION:-}"
+export VERSION="${SHOWCASE_VERSION:-1.0.$(date +%Y%m%d%H%M%S)}"
 
 # Publishing prefix for Aptly
 DEBIAN_REPO="examples"

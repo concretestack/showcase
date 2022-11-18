@@ -21,6 +21,10 @@ publishdeb-pokemon: package-pokemon ## Publish Pokemon debs to our debian reposi
 	@echo "---> publishing debs to debian repository"
 	${PROJECT_ROOT}/scripts/devops.sh --publish
 
+clean: ## Remove all intermediate artifacts
+	${PROJECT_ROOT}/gradlew clean
+	rm -rf aptly/ || true
+
 help: ## Shows the help
 	@echo 'Usage: make <OPTIONS> ... <TARGETS>'
 	@echo ''
