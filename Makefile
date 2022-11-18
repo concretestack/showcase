@@ -1,6 +1,7 @@
 .DEFAULT_GOAL := help
 SHELL:=/bin/bash
-DOCKER_REPOSITORY=chassidemo
+APPLICATION?=pokemon
+DOCKER_REPOSITORY?=chassidemo
 
 export PROJECT_ROOT = $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 
