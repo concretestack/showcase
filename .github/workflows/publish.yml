@@ -24,7 +24,7 @@ jobs:
           echo ::set-output name=chassi-version::${GITHUB_REF##*/v}
   publish-pokemons:
     needs: [envsetup]
-    runs-on: jammy
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
         with:
