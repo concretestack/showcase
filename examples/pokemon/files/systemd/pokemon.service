@@ -1,6 +1,6 @@
 [Unit]
 Description=Showcase Pokemon
-After=secrets.service
+After=secret.service
 Requires=docker.service
 
 [Service]
