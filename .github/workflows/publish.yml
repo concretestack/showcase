@@ -14,7 +14,7 @@ concurrency:
 jobs:
   envsetup:
     name: set some basic output information for triggered workflows
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     outputs:
       chassi-version: ${{ steps.set-chassi-version.outputs.chassi-version }}
     steps:
