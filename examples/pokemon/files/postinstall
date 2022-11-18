@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# shellcheck disable=SC2016
+
+set -e
+
+if [ -d "/run/systemd/system" ]; then
+  systemctl enable docker.service
+  systemctl enable secrets.service
+  systemctl enable pokemon.service
+fi
+
+echo -en "Showcase Pokemon: \e[32mCompleted Successfully"

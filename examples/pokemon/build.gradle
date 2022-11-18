@@ -1,0 +1,33 @@
+def name = "showcase-pokemon"
+
+ospackage {
+    packageName = "${name}"
+    version = System.getenv("SHOWCASE_VERSION")
+    arch = "${architecture}"
+    os = LINUX
+    packageDescription = "Showcase applications demonstrating various use cases"
+    maintainer = "engineers@chassi.io"
+
+    postInstall file('files/postinstall')
+
+    from('files/.env') {
+        into "${configHomeDirectory}/templates/"
+        permissionGroup 'ubuntu'
+        user 'ubuntu'
+        fileMode 0660
+    }
+
+    from('files/systemd') {
+        include "*.service"
+        into "/etc/systemd/system/"
+    }
+}
+
+buildDeb {
+    group = "debian"
+    description = "Showcase applications demonstrating various use cases"
+
+    requires('docker-ce')
+
+    release = "${release}"
+}

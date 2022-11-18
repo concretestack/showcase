@@ -25,4 +25,9 @@ ENV PATH="/.venv/bin:$PATH"
 COPY main.py main.py
 EXPOSE 10000/tcp
 
-ENTRYPOINT ["python", "main.py"]
+RUN mkdir -p "/opt/newrelic"
+COPY newrelic.ini /opt/newrelic/newrelic.ini
+ENV NEW_RELIC_CONFIG_FILE="/opt/newrelic/newrelic.ini"
+
+
+ENTRYPOINT ["newrelic-admin", "run-program", "python", "main.py"]

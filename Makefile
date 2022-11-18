@@ -2,13 +2,15 @@
 SHELL:=/bin/bash
 REPOSITORY=chassidemo
 
-pokemon: .guard-REPOSITORY
+build-pokemon:
 	@echo "---> building pokemon raspberry pi application container"
 	docker build -t $(REPOSITORY)/pokemon:latest -f pokemon.Dockerfile examples/pokemon/
 
-publish: .guard-APPLICATION
+publish-pokemon: build-pokemon
 	@echo "---> publishing $(APPLICATION) raspberry pi application"
 	docker push $(REPOSITORY)/$(APPLICATION):latest
+
+
 
 .guard-%:
 	@ if [ "${${*}}" = "" ]; then \
