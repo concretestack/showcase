@@ -2,7 +2,8 @@
 SHELL:=/bin/bash
 APPLICATION?=pokemon
 DOCKER_REPOSITORY?=chassidemo
-TEST_ENDPOINT?=
+TEST_ENDPOINT?=http://pokemon.alpha.chassi.cloud
+TEST_DURATION?=1800
 
 export PROJECT_ROOT = $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 
@@ -25,6 +26,12 @@ publishdeb-pokemon: package-pokemon ## Publish Pokemon debs to our debian reposi
 clean: ## Remove all intermediate artifacts
 	${PROJECT_ROOT}/gradlew clean
 	rm -rf aptly/ || true
+
+functional-tests: ## Runs functional tests
+	curl --fail -vv "$(TEST_ENDPOINT)/pokemon/bulbasaur"
+
+load-tests: ## Runs load tests
+	ab -t $(TEST_DURATION) -n 100000000 -c 100 "$(TEST_ENDPOINT)/pokemon/bulbasaur"
 
 help: ## Shows the help
 	@echo 'Usage: make <OPTIONS> ... <TARGETS>'
