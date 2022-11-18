@@ -1,0 +1,16 @@
+[Unit]
+Description=Showcase Pokemon
+After=secret.service
+Requires=docker.service
+
+[Service]
+User=ubuntu
+TimeoutStartSec=0
+Restart=on-failure
+RestartSec=10s
+ExecStop=-/usr/bin/docker stop -t 5 pokemon
+ExecStartPre=-/usr/bin/docker pull chassidemo/pokemon:latest
+ExecStart=/usr/bin/docker run --rm --name pokemon --net=host --env-file=/opt/examples/config/.env  chassidemo/pokemon:latest
+
+[Install]
+WantedBy=multi-user.target

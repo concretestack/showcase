@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "5e1ab2780cf1059fa38190665572b0b31521d3031661938d9f9a0334ee6f1624"
+            "sha256": "9b6173c2da9a21df01eb6062250ab431b1b809221d66e5b34e74bcf28f329e65"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -23,6 +23,27 @@
             ],
             "index": "pypi",
             "version": "==0.12.23"
+        },
+        "newrelic": {
+            "hashes": [
+                "sha256:01b37112a6f48d2da8e98268dfc273a33981297a2b43ac7674d5993dee31885d",
+                "sha256:0c465d7366cb081498bb6918f4b91157b54e70b446639d1a3ec86fc72062e6c3",
+                "sha256:20ea8850cc5c05edba753cd85800bb6d3411bcd7425614c59e5550f35c4f2cc6",
+                "sha256:385829c819bccde7edc002ea73b784194312824c3b3d9511c1015194498f2658",
+                "sha256:492a06949af21b82072095c1055051985cddadc9458f1752a2c040228918fabc",
+                "sha256:4abf147b5148ac1d284aba46582c92840a521bf5086a29af36494bd53778136f",
+                "sha256:592b622945e4ff4f14cca0e01dd08553a1f1e29cea25826b9e30101133296993",
+                "sha256:88063cd39672a93d2201f9f6568e9b996b1a1b9ca052f83eac9a4ca0a36fa7a9",
+                "sha256:8ec531aa73f1ae12724031a965805a535585fd06c617acb68b8b1a4534912e31",
+                "sha256:97f8f288dc131b3260220aef3716ae5e78aeb08edcd2e43e947a675a0d08d21b",
+                "sha256:ba0b9fcf84b3735b7d699df9e27822ab5a62a1ed12c39540140e2d40be3be8e9",
+                "sha256:c4c831a8f084b8168afdc4e9770ac062d6fdac16f41aa7a122ce87e5e448bbe9",
+                "sha256:dc095f45496c03681bcf01692c85817243ccb500a5281410cdf7194be9308444",
+                "sha256:edbedd2040a003e2f712184fab672e2987cf34da59f64f548d121c1a02ea1f4c",
+                "sha256:ede2b43cf395fef31c3a43bd8d6db6cb56496516c54123b534f0027d582446ef"
+            ],
+            "index": "pypi",
+            "version": "==8.4.0"
         },
         "pokemon": {
             "hashes": [
