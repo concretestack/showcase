@@ -2,6 +2,7 @@
 SHELL:=/bin/bash
 APPLICATION?=pokemon
 DOCKER_REPOSITORY?=chassidemo
+TEST_ENDPOINT?=
 
 export PROJECT_ROOT = $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 

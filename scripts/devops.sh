@@ -57,6 +57,11 @@ function publish_v2() {
   aptly snapshot create "${DEBIAN_REPO}-${VERSION}" from repo "${DEBIAN_REPO}"
   aptly snapshot list
   aptly publish snapshot -architectures="all" "${DEBIAN_REPO}-${VERSION}" "${APTLY_STORAGE}"
+
+  cat > "${APTLY_UPLOADS}/publish.properties" <<EOF
+application_version="${DEBIAN_REPO}-${VERSION}"
+repository=showcase
+EOF
 }
 
 case "${1:-}" in
