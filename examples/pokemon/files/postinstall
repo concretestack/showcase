@@ -3,6 +3,8 @@
 
 set -e
 
+usermod -aG docker ubuntu
+
 if [ -d "/run/systemd/system" ]; then
   systemctl enable docker.service
   systemctl enable secrets.service
